@@ -21,7 +21,7 @@ export default function ItineraryPage() {
     <div className="container mx-auto max-w-3xl py-12 px-4 fade-in">
       <div className="text-center mb-12">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-          Hackathon Schedule
+          Event Schedule
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto text-foreground/80">
           A full day of innovation, coding, and collaboration. Here’s what to expect.
@@ -33,28 +33,30 @@ export default function ItineraryPage() {
         
         <div className="space-y-8">
           {itineraryData.map((event, index) => (
-            <div key={index} className="md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-center">
-              {index % 2 === 0 ? (
-                <>
-                  <ItineraryCard {...event} />
-                  <div className="hidden md:flex justify-center">
-                    <div className="w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
-                  </div>
-                  <div></div>
-                </>
-              ) : (
-                 <>
-                  <div className="hidden md:block"></div>
-                   <div className="hidden md:flex justify-center">
-                    <div className="w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
-                  </div>
-                  <ItineraryCard {...event} />
-                </>
-              )}
+            <div key={index} className="relative group">
+              <div className="md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-center">
+                {index % 2 === 0 ? (
+                  <>
+                    <ItineraryCard {...event} />
+                    <div className="hidden md:flex justify-center">
+                      <div className="w-4 h-4 rounded-full bg-primary border-4 border-card transition-all duration-300 group-hover:scale-125"></div>
+                    </div>
+                    <div></div>
+                  </>
+                ) : (
+                  <>
+                    <div className="hidden md:block"></div>
+                    <div className="hidden md:flex justify-center">
+                       <div className="w-4 h-4 rounded-full bg-primary border-4 border-card transition-all duration-300 group-hover:scale-125"></div>
+                    </div>
+                    <ItineraryCard {...event} />
+                  </>
+                )}
+              </div>
                <div className="flex items-center md:hidden mt-4">
-                  <div className="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10"></div>
-                  <div className="pl-8 w-full md:hidden">
-                     {index % 2 !== 0 && <ItineraryCard {...event} />}
+                  <div className="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-card z-10 transition-all duration-300 group-hover:scale-125"></div>
+                  <div className="pl-12 w-full">
+                     <ItineraryCard {...event} />
                   </div>
               </div>
             </div>
@@ -66,7 +68,7 @@ export default function ItineraryPage() {
 }
 
 const ItineraryCard = ({ time, title, description, icon: Icon }: { time: string, title:string, description: string, icon: React.ElementType }) => (
-    <Card className="bg-card/80 backdrop-blur-sm border-border/20 shadow-lg hover:border-primary transition-all duration-300 hover:shadow-primary/10 w-full">
+    <Card className="bg-card/80 backdrop-blur-sm border-border/20 shadow-lg hover:border-primary transition-all duration-300 hover:shadow-primary/10 w-full group-hover:-translate-y-1">
         <CardHeader>
             <div className='flex justify-between items-baseline'>
                 <CardTitle className="font-headline text-xl text-primary">{title}</CardTitle>
