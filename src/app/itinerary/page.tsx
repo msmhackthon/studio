@@ -69,17 +69,17 @@ export default function ItineraryPage() {
 
 const ItineraryCard = ({ time, title, description, icon: Icon }: { time: string, title:string, description: string, icon: React.ElementType }) => (
     <Card className="bg-card/80 backdrop-blur-sm border-border/20 shadow-lg hover:border-primary transition-all duration-300 hover:shadow-primary/10 w-full group-hover:-translate-y-1">
-        <CardHeader>
-            <div className='flex justify-between items-baseline'>
-                <CardTitle className="font-headline text-xl text-primary">{title}</CardTitle>
+        <CardContent className="flex items-center gap-6 p-6">
+            <div className="flex flex-col items-center text-center w-20 flex-shrink-0">
+                <Icon className="h-8 w-8 text-primary mb-2"/>
                 <div className="text-sm font-code font-bold text-accent">
                     <span>{time}</span>
                 </div>
             </div>
-        </CardHeader>
-        <CardContent className="flex items-start gap-4">
-            <Icon className="h-8 w-8 text-primary/70 flex-shrink-0 mt-1"/>
-            <p className="text-foreground/80">{description}</p>
+            <div className="flex-grow">
+                <CardTitle className="font-headline text-xl text-primary mb-1">{title}</CardTitle>
+                <p className="text-foreground/80">{description}</p>
+            </div>
         </CardContent>
     </Card>
 );
