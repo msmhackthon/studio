@@ -2,18 +2,18 @@
 'use client';
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Clock, UserCheck, Mic, Code, Pizza, Award } from 'lucide-react';
+import { Clock, UserCheck, Mic, Code, Pizza, Award, ClipboardPenLine, Presentation, PartyPopper } from 'lucide-react';
 import React from 'react';
 
 const itineraryData = [
   { time: '08:00 AM', title: 'Reporting & Check-in', description: 'Initial sync-up. Get your credentials and fuel up for the day.', icon: UserCheck },
-  { time: '08:15 AM', title: 'Registration', description: 'System authentication. Secure your node in the network.', icon: UserCheck },
+  { time: '08:15 AM', title: 'Registration', description: 'System authentication. Secure your node in the network.', icon: ClipboardPenLine },
   { time: '08:30 AM', title: 'Opening Ceremonies', description: 'The Genesis. Kick-off protocols and mission briefing.', icon: Mic },
   { time: '09:00 AM', title: 'Hacking Commences', description: 'Execute. The hackathon officially begins. Start building.', icon: Code },
   { time: '01:00 PM', title: 'Lunch Break', description: 'Recharge. Refuel your systems with a catered lunch.', icon: Pizza },
-  { time: '01:30 PM', title: 'Project Presentations', description: 'Showcase. Teams present their innovations to the judges.', icon: Mic },
+  { time: '01:30 PM', title: 'Project Presentations', description: 'Showcase. Teams present their innovations to the judges.', icon: Presentation },
   { time: '03:30 PM', title: 'Award Ceremony', description: 'Victory. Recognition of the champions and their projects.', icon: Award },
-  { time: '04:30 PM', title: 'Event Concludes', description: 'Mission complete. Network, celebrate, and look to the future.', icon: Award },
+  { time: '04:30 PM', title: 'Event Concludes', description: 'Mission complete. Network, celebrate, and look to the future.', icon: PartyPopper },
 ];
 
 export default function ItineraryPage() {
